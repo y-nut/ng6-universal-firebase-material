@@ -1,0 +1,24 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source" : "**/*.@(css|js)",
+        "destination": "/index2.html"
+      },
+      {
+        "source": "**",
+        "function": "ssr"
+      }
+    ]
+  }
+}
